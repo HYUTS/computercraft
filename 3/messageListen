@@ -1,4 +1,4 @@
-print("Listening for messages")
+print("\nListening for messages")
 local modem = peripheral.wrap("left")
 modem.open(3)
 
@@ -17,7 +17,7 @@ while true do
     local msg = test()
     -- print(msg)
     if msg == 'exit' then
-        print("Attempting to break")
+        print("Exit message received. Ending program...\n")
         break
     end
 
