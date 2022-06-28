@@ -1,6 +1,6 @@
 print("\nListening for messages")
 local modem = peripheral.wrap("left")
-modem.open(3)
+modem.open(133)
 
 function test()
     local event, senderChannel, replyChannel, modemSide, message, senderDistance = os.pullEvent("modem_message")
@@ -17,6 +17,7 @@ while true do
     local msg = test()
     -- print(msg)
     if msg == 'exit' then
+        modem.transmit(1,133,input)
         print("Exit message received. Ending program...\n")
         break
     end
