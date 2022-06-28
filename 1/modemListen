@@ -1,0 +1,6 @@
+local modem = peripheral.wrap("right")
+modem.open(3) -- Open channel 3 so that we can listen on it
+local event, modemSide, senderChannel, replayChannel,
+message, senderDistance = os.pullEvent("modem_message")
+
+print("senderChannel: "..senderChannel)

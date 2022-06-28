@@ -1,0 +1,2 @@
+local modem = peripheral.wrap("back")
+modem.transmit(3,1,"HYUTS")
