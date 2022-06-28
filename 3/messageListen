@@ -1,9 +1,30 @@
 print("Listening for messages")
 local modem = peripheral.wrap("left")
 modem.open(3)
-local event, senderChannel, replyChannel, modemSide, message, senderDistance = os.pullEvent("modem_message")
- print("senderChannel: "..senderChannel)
- print("replyChannel: "..replyChannel)
- print("modem side: "..modemSide)
- print("message: "..message)
- print("sender distance: "..senderDistance)
+
+function test()
+    local event, senderChannel, replyChannel, modemSide, message, senderDistance = os.pullEvent("modem_message")
+    print("senderChannel: "..senderChannel)
+    print("replyChannel: "..replyChannel)
+    print("modem side: "..modemSide)
+    print("message: "..message)
+    print("sender distance: "..senderDistance)
+    return message
+end
+
+while true do
+    -- test()
+    local msg = test()
+    -- print(msg)
+    if msg == 'exit' then
+        print("Attempting to break")
+        break
+    end
+
+end
+-- local event, senderChannel, replyChannel, modemSide, message, senderDistance = os.pullEvent("modem_message")
+--  print("senderChannel: "..senderChannel)
+--  print("replyChannel: "..replyChannel)
+--  print("modem side: "..modemSide)
+--  print("message: "..message)
+--  print("sender distance: "..senderDistance)

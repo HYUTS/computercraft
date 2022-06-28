@@ -1,0 +1,5 @@
+local channel = 133
+local side = "left"
+print("Listening for messages on channel "..channel)
+local modem = peripheral.wrap(side)
+modem.open(channel)
