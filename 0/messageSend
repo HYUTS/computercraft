@@ -1,18 +1,6 @@
 local modem = peripheral.wrap("back")
 local input = read()
 
--- function test()
---     local event, senderChannel, replyChannel, modemSide, message, senderDistance = os.pullEvent("modem_message")
---     print("senderChannel: "..senderChannel)
---     print("replyChannel: "..replyChannel)
---     print("modem side: "..modemSide)
---     print("message: "..message)
---     print("sender distance: "..senderDistance)
---     return message
--- end
-
 -- Sending the message `input` to the channel 3, and the reply channel 1.
 -- (number channel, number replyChannel, any message)
 modem.transmit(133,1,input)
-
--- test()

@@ -12,8 +12,15 @@ function test()
     return message
 end
 
+-- Defining a function called `forward` that takes an argument called `dist`. It then loops `dist` times, calling `turtle.forward()` each time.
+function forward(dist)
+    for i=1, dist do
+        turtle.forward()
+        -- print(dist.." "..i)
+    end
+end
+
 while true do
-    -- test()
     local msg = test()
     -- print(msg)
     if msg == 'exit' then
@@ -22,10 +29,7 @@ while true do
         break
     end
 
+-- Calling the function `forward` with the argument `msg`.
+    forward(msg)
+
 end
--- local event, senderChannel, replyChannel, modemSide, message, senderDistance = os.pullEvent("modem_message")
---  print("senderChannel: "..senderChannel)
---  print("replyChannel: "..replyChannel)
---  print("modem side: "..modemSide)
---  print("message: "..message)
---  print("sender distance: "..senderDistance)
